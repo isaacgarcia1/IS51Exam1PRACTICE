@@ -11,7 +11,7 @@ import { Http } from '@angular/http';
 
 export class OrdersComponent implements OnInit {
 
-  orders:Array<any> = [];
+  orders: Array<any> = [];
 
   constructor(
     private router: Router,
@@ -22,21 +22,45 @@ export class OrdersComponent implements OnInit {
   }
 
   async ngOnInit() {
-    
+    this.loadDefaultOrders();
+  }
+  loadDefaultOrders() {
+    this.orders = [{
+      'pid': '1',
+      'image': 'assets/sm_hotdog.jpeg',
+      'description': 'Hot Dog',
+      'price': 5.00,
+      'quantity': 2
+    }, {
+      'pid': '2',
+      'image': 'assets/sm_hamberger.jpeg',
+      'description': 'Hamberger',
+      'price': 6.00,
+      'quantity': 1
+    }, {
+      'pid': '3',
+      'image': 'assets/sm_pizza.jpeg',
+      'description': 'Large Pizza',
+      'price': 12.00,
+      'quantity': 2
+    }];
   }
 
-  // prepare result, splice last name, first name
+  delete(index: number) {
+    console.log('from delete() index is ', index);
+  }
 
-  // Calculate total and perform input validation
-  
-  // display the order form with orders from orders.json
+    // prepare result, splice last name, first name
 
-  // Clear the orders form
+    // Calculate total and perform input validation
 
-  // Add items 'Hot Dog', 'Hamberger' and 'Pizza' to list when corresponding button is clicked
+    // display the order form with orders from orders.json
 
-  // delete line item (order) when delete button is click
+    // Clear the orders form
 
-  // read in the orders.json file and populate the list table with the initial orders (3)
+    // Add items 'Hot Dog', 'Hamberger' and 'Pizza' to list when corresponding button is clicked
 
-}
+    // delete line item (order) when delete button is click
+
+    // read in the orders.json file and populate the list table with the initial orders (3)
+  }
